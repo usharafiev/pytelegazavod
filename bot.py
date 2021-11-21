@@ -22,7 +22,13 @@ def get_date(message):
     now = datetime.now()
     now.toordinal()
     try:
-        valid_date = datetime.strptime(date_of_work, '%d/%m/%Y')
+        try:
+            datetime.strptime(date_of_work, '%d/%m/%Y')
+        except:
+            try:
+                valid_date = datetime.strptime(date_of_work, '%d.%m.%Y')
+            except:
+                valid_date = datetime.strptime(date_of_work, '%d %m %Y')
         valid_date.toordinal()
         a = 1
         if valid_date > datetime.now():
