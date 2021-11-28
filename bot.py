@@ -1,7 +1,7 @@
 import datetime
 from datetime import datetime
 import telebot
-import config
+import config_test
 
 bot = telebot.TeleBot(config.token)
 
